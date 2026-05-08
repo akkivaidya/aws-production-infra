@@ -3,6 +3,7 @@ resource "aws_sns_topic" "alerts" {
 }
 
 resource "aws_sns_topic_subscription" "email" {
+  count     = var.alarm_email != "" ? 1 : 0
   topic_arn = aws_sns_topic.alerts.arn
   protocol  = "email"
   endpoint  = var.alarm_email
@@ -60,6 +61,6 @@ resource "aws_budgets_budget" "monthly" {
     threshold                  = 80
     threshold_type             = "PERCENTAGE"
     notification_type          = "ACTUAL"
-    subscriber_email_addresses = [var.alarm_email]
+    subscriber_email_addresses = var.alarm_email != "" ? [var.alarm_email] : ["placeholder@example.com"]
   }
 }
