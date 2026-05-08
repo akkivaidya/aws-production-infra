@@ -61,22 +61,22 @@ terraform init
 
 3. Preview the infrastructure:
 ```bash
-terraform plan -var="alarm_email=abc@email.com"
+terraform plan -var="alarm_email=rakeshvaidya1996@email.com"
 ```
 
 4. Deploy:
 ```bash
-terraform apply -var="alarm_email=abc@email.com"
+terraform apply -var="alarm_email=rakeshvaidya1996@email.com"
 ```
 
 5. Access the application via the ALB DNS name shown in the output:
 ```
-alb_dns_name = "prod-alb-xxxx.us-east-1.elb.amazonaws.com"
+alb_dns_name = "prod-alb-1763024188.us-east-1.elb.amazonaws.com"
 ```
 
 ### Destroy (to avoid charges)
 ```bash
-terraform destroy -var="alarm_email=abc@email.com"
+terraform destroy -var="alarm_email=rakeshvaidya1996@email.com"
 ```
 
 ---
