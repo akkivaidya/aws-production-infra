@@ -1,4 +1,10 @@
 terraform {
+  backend "s3" {
+    bucket = "prod-terraform-state-akkivaidya"
+    key    = "prod/terraform.tfstate"
+    region = "us-east-1"
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
